@@ -124,11 +124,11 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "YOAV-ASSAF-LIYA"
+#define CUSTOM_MACHINE_NAME "LIYA-YOAV-ASSAF"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-//#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "00000000-0000-0000-0000-000543488899"
 
 // @section extruder
 
@@ -163,36 +163,36 @@
 
 // A dual extruder that uses a single stepper motor
 //#define SWITCHING_EXTRUDER
-#if ENABLED(SWITCHING_EXTRUDER)
-  #define SWITCHING_EXTRUDER_SERVO_NR 0
-  #define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
-  #if EXTRUDERS > 3
-    #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
-  #endif
-#endif
+//#if ENABLED(SWITCHING_EXTRUDER)
+  //#define SWITCHING_EXTRUDER_SERVO_NR 0
+  //#define SWITCHING_EXTRUDER_SERVO_ANGLES { 0, 90 } // Angles for E0, E1[, E2, E3]
+  //#if EXTRUDERS > 3
+   // #define SWITCHING_EXTRUDER_E23_SERVO_NR 1
+  //#endif
+//#endif
 
 // A dual-nozzle that uses a servomotor to raise/lower one of the nozzles
 //#define SWITCHING_NOZZLE
-#if ENABLED(SWITCHING_NOZZLE)
-  #define SWITCHING_NOZZLE_SERVO_NR 0
-  #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1
+//#if ENABLED(SWITCHING_NOZZLE)
+  //#define SWITCHING_NOZZLE_SERVO_NR 0
+  //#define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1
   //#define HOTEND_OFFSET_Z { 0.0, 0.0 }
-#endif
+//#endif
 
 /**
  * Two separate X-carriages with extruders that connect to a moving part
  * via a magnetic docking mechanism. Requires SOL1_PIN and SOL2_PIN.
  */
 //#define PARKING_EXTRUDER
-#if ENABLED(PARKING_EXTRUDER)
-  #define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
-  #define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
-  #define PARKING_EXTRUDER_SOLENOIDS_DELAY 250        // Delay (ms) for magnetic field. No delay if 0 or not defined.
-  #define PARKING_EXTRUDER_PARKING_X { -78, 184 }     // X positions for parking the extruders
-  #define PARKING_EXTRUDER_GRAB_DISTANCE 1            // mm to move beyond the parking point to grab the extruder
-  #define PARKING_EXTRUDER_SECURITY_RAISE 5           // Z-raise before parking
-  #define HOTEND_OFFSET_Z { 0.0, 1.3 }                // Z-offsets of the two hotends. The first must be 0.
-#endif
+//#if ENABLED(PARKING_EXTRUDER)
+  //#define PARKING_EXTRUDER_SOLENOIDS_INVERT           // If enabled, the solenoid is NOT magnetized with applied voltage
+  //#define PARKING_EXTRUDER_SOLENOIDS_PINS_ACTIVE LOW  // LOW or HIGH pin signal energizes the coil
+  //#define PARKING_EXTRUDER_SOLENOIDS_DELAY 250        // Delay (ms) for magnetic field. No delay if 0 or not defined.
+  //#define PARKING_EXTRUDER_PARKING_X { -78, 184 }     // X positions for parking the extruders
+  //#define PARKING_EXTRUDER_GRAB_DISTANCE 1            // mm to move beyond the parking point to grab the extruder
+  //#define PARKING_EXTRUDER_SECURITY_RAISE 5           // Z-raise before parking
+  //#define HOTEND_OFFSET_Z { 0.0, 1.3 }                // Z-offsets of the two hotends. The first must be 0.
+//#endif
 
 /**
  * "Mixing Extruder"
@@ -203,11 +203,11 @@
  *   - Enable DIRECT_MIXING_IN_G1 for Pia Taubert's reference implementation
  */
 //#define MIXING_EXTRUDER
-#if ENABLED(MIXING_EXTRUDER)
-  #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
-  #define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
+//#if ENABLED(MIXING_EXTRUDER)
+  //#define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
+  //#define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
   //#define DIRECT_MIXING_IN_G1    // Allow ABCDHI mix factors in G1 movement commands
-#endif
+//#endif
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -228,9 +228,9 @@
  */
 #define POWER_SUPPLY 0
 
-#if POWER_SUPPLY > 0
-  // Enable this option to leave the PSU off at startup.
-  // Power to steppers and heaters will need to be turned on with M80.
+#if POWER_SUPPLY > 0 
+  Enable this option to leave the PSU off at startup.
+  Power to steppers and heaters will need to be turned on with M80.
   #define PS_DEFAULT_OFF
 #endif
 
@@ -493,9 +493,9 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // set the default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 4
+    #define DELTA_CALIBRATION_DEFAULT_POINTS 7 //TBD it was 4
 
-    // Enable and set these values based on results of 'G33 A'
+    // Enable and set these values based on results of 'G33 A' // TBD set
     //#define H_FACTOR 1.01
     //#define R_FACTOR 2.61
     //#define A_FACTOR 0.87
@@ -504,24 +504,24 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
     // Set the radius for the calibration probe points - max 0.9 * DELTA_PRINTABLE_RADIUS for non-eccentric probes
-    #define DELTA_CALIBRATION_RADIUS 121.5 // mm
+    #define DELTA_CALIBRATION_RADIUS 148.5 // mm
     // Set the steprate for papertest probing
     #define PROBE_MANUALLY_STEP 0.025
   #endif
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 290.0 // mm
+  #define DELTA_PRINTABLE_RADIUS 298.0 // mm
 
   // Center-to-center distance of the holes in the diagonal push rods.
   #define DELTA_DIAGONAL_ROD 320 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 350.00 // get this value from auto calibrate
+  #define DELTA_HEIGHT 734.00 // get this value from auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 153.0 //mm  Get this value from auto calibrate
+  #define DELTA_RADIUS 148.0 //mm  Get this value from auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
@@ -1018,7 +1018,7 @@
   //#define ENABLE_LEVELING_FADE_HEIGHT
 
   // Set the boundaries for probing (where the probe can reach).
-  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 10)
+  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 10)  //TBD check prob limits
 
 
   // For Cartesian machines, instead of dividing moves on mesh boundaries,

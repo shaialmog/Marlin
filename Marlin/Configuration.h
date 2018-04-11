@@ -493,7 +493,7 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // set the default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 8 //TBD it was 4
+    #define DELTA_CALIBRATION_DEFAULT_POINTS 3 //TBD it was 4
 
     // Enable and set these values based on results of 'G33 A' // TBD set auto calibration
     //#define H_FACTOR 1.01
@@ -503,7 +503,7 @@
   #endif
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 298.0 // mm
+  #define DELTA_PRINTABLE_RADIUS 145.0 // mm
 
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
     // Set the radius for the calibration probe points - max 0.9 * DELTA_PRINTABLE_RADIUS for non-eccentric probes
@@ -516,12 +516,12 @@
   #define DELTA_DIAGONAL_ROD 320 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 735.00 // get this value from auto calibrate
+  #define DELTA_HEIGHT 719.20 // get this value from auto calibrate
 
   #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 148.0 //mm  Get this value from auto calibrate
+  #define DELTA_RADIUS 145.0 //mm  Get this value from auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0

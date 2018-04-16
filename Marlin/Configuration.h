@@ -483,8 +483,7 @@
 
   // Delta calibration menu
   // uncomment to add three points calibration menu option.
-  // See http://minow.blogspot.com/index.html#4918805519571907051
-  #define DELTA_CALIBRATION_MENU
+//  #define DELTA_CALIBRATION_MENU
 
   // uncomment to add G33 Delta Auto-Calibration (Enable EEPROM_SETTINGS to store results)
   #define DELTA_AUTO_CALIBRATION
@@ -493,17 +492,17 @@
 
   #if ENABLED(DELTA_AUTO_CALIBRATION)
     // set the default number of probe points : n*n (1 -> 7)
-    #define DELTA_CALIBRATION_DEFAULT_POINTS 7 //TBD it was 4
+    #define DELTA_CALIBRATION_DEFAULT_POINTS 4 //TBD it was 4
 
     // Enable and set these values based on results of 'G33 A' // TBD set auto calibration
-    //#define H_FACTOR 0.16
-   // #define R_FACTOR -0.35
-   // #define A_FACTOR 0.02
+  #define H_FACTOR +2.06
+  #define R_FACTOR -8.22
+  #define A_FACTOR +1.70
 
   #endif
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 110.0 // mm
+  #define DELTA_PRINTABLE_RADIUS 148.26 // mm
 
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
     // Set the radius for the calibration probe points - max 0.9 * DELTA_PRINTABLE_RADIUS for non-eccentric probes
@@ -513,15 +512,15 @@
   #endif
 
   // Center-to-center distance of the holes in the diagonal push rods.
-  #define DELTA_DIAGONAL_ROD 320 // mm
+  #define DELTA_DIAGONAL_ROD 320.00 // mm
 
   // height from z=0 to home position
-  #define DELTA_HEIGHT 750.00 // get this value from auto calibrate
+  #define DELTA_HEIGHT 740.32 // get this value from auto calibrate
 
-  #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // get these from auto calibrate
+  #define DELTA_ENDSTOP_ADJ { 0.0, 0, 0.0 }//{ -34.0, -24.0, 0.0 } // get these from auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 110.0 //mm  Get this value from auto calibrate
+  #define DELTA_RADIUS 171.00 //mm  Get this value from auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
